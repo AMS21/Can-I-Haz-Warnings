@@ -5,6 +5,7 @@ path_classifiers:
     - tests
   library:
     - external
+    - samples
 
 queries:
   - include: "*"

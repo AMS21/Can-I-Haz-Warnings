@@ -1,4 +1,8 @@
-int main()
+#include "Application.hpp"
+
+int main(int argc, char* argv[])
 {
-    return 0;
+    chw::Application app;
+
+    return app.Run(argc, argv);
 }
