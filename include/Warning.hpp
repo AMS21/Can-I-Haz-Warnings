@@ -6,21 +6,15 @@
 
 namespace chw
 {
-    enum class Level
-    {
-        Info,
-        Warning,
-        Error,
-    };
-
     class Warning
     {
     public:
-        Warning(Location location, Level level, const std::string& id, const std::string& message);
+        Warning(const Location& location, const std::string& severity, const std::string& id,
+                const std::string& message);
 
         const Location& GetLocation() const noexcept;
 
-        Level GetLevel() const noexcept;
+        const std::string& GetSeverity() const noexcept;
 
         const std::string& GetId() const noexcept;
 
@@ -28,7 +22,7 @@ namespace chw
 
     private:
         Location    m_Location;
-        Level       m_Level;
+        std::string m_Severity;
         std::string m_Id;
         std::string m_Message;
     };

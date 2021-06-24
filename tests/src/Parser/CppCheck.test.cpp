@@ -30,7 +30,7 @@ TEST_CASE("Parser CppCheck")
         CHECK(warning.GetLocation().GetFileName() == "samples/OutOfBounds/IndexOutOfBounds.c");
         CHECK(warning.GetLocation().GetLineNumber() == 7);
         CHECK(warning.GetLocation().GetColumn() == 10);
-        CHECK(warning.GetLevel() == chw::Level::Error);
+        CHECK(warning.GetSeverity() == "error");
         CHECK(warning.GetId() == "arrayIndexOutOfBounds");
         CHECK(warning.GetMessage() == "Array 'a[2]' accessed at index 2, which is out of bounds.");
 

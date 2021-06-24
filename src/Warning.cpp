@@ -2,10 +2,10 @@
 
 namespace chw
 {
-    Warning::Warning(Location location, Level level, const std::string& id,
+    Warning::Warning(const Location& location, const std::string& severity, const std::string& id,
                      const std::string& message)
         : m_Location(location)
-        , m_Level(level)
+        , m_Severity(severity)
         , m_Id(id)
         , m_Message(message)
     {}
@@ -15,9 +15,9 @@ namespace chw
         return m_Location;
     }
 
-    Level Warning::GetLevel() const noexcept
+    const std::string& Warning::GetSeverity() const noexcept
     {
-        return m_Level;
+        return m_Severity;
     }
 
     const std::string& Warning::GetId() const noexcept

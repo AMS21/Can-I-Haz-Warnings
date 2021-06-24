@@ -24,23 +24,14 @@ namespace chw
             std::string file_name     = match[1];
             int         line_number   = std::stoi(match[2]);
             int         column_number = std::stoi(match[3]);
-            std::string level_string  = match[4];
+            std::string severity      = match[4];
             std::string message       = match[5];
             std::string id            = match[6];
 
             // Construct warning
             Location location = Location(file_name, line_number, column_number);
-            Level    level    = Level::Warning;
-            if (level_string == "error")
-            {
-                level = Level::Error;
-            }
-            else if (level_string == "info")
-            {
-                level = Level::Info;
-            }
 
-            Warning warning = Warning(location, level, id, message);
+            Warning warning = Warning(location, severity, id, message);
 
             // Add warning to database
             database.AddWarning(warning);
