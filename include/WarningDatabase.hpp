@@ -1,5 +1,4 @@
-#ifndef INCG_WARNING_DATABASE_HPP
-#define INCG_WARNING_DATABASE_HPP
+#pragma once
 
 #include "Warning.hpp"
 #include <vector>
@@ -17,5 +16,3 @@ namespace chw
         std::vector<Warning> m_Warnings;
     };
 } // namespace chw
-
-#endif // INCG_WARNING_DATABASE_HPP

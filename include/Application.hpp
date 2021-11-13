@@ -1,5 +1,4 @@
-#ifndef INCG_CHW_APPLICATION_HPP
-#define INCG_CHW_APPLICATION_HPP
+#pragma once
 
 namespace chw
 {
@@ -11,5 +10,3 @@ namespace chw
     private:
     };
 } // namespace chw
-
-#endif // INCG_CHW_APPLICATION_HPP

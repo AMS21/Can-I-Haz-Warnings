@@ -1,5 +1,4 @@
-#ifndef INCG_CHW_WARNING_HPP
-#define INCG_CHW_WARNING_HPP
+#pragma once
 
 #include "Location.hpp"
 #include <string>
@@ -27,5 +26,3 @@ namespace chw
         std::string m_Message;
     };
 } // namespace chw
-
-#endif // INCG_CHW_WARNING_HPP
