@@ -1,6 +1,7 @@
 #include "Parser/CppCheck.hpp"
 
 #include "WarningDatabase.hpp"
+#include <filesystem>
 #include <iostream>
 #include <regex>
 
@@ -21,7 +22,8 @@ namespace chw
             std::smatch match = *it;
 
             // Extract elements
-            std::string file_name     = match[1];
+            std::string file_name =
+                    std::filesystem::absolute(std::filesystem::path(match[1])).string();
             int         line_number   = std::stoi(match[2]);
             int         column_number = std::stoi(match[3]);
             std::string severity      = match[4];

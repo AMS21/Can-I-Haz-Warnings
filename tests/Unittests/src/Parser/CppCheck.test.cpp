@@ -27,7 +27,7 @@ TEST_CASE("Parser CppCheck")
 
         chw::Warning& warning = database.m_Warnings.at(0);
 
-        CHECK(warning.GetLocation().GetFileName() == "samples/OutOfBounds/IndexOutOfBounds.c");
+        CHECK(warning.GetLocation().GetFileName() == "IndexOutOfBounds.c");
         CHECK(warning.GetLocation().GetLineNumber() == 7);
         CHECK(warning.GetLocation().GetColumn() == 10);
         CHECK(warning.GetSeverity() == "error");

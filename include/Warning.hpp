@@ -12,13 +12,13 @@ namespace chw
         Warning(const Location& location, const std::string& severity, const std::string& id,
                 const std::string& message);
 
-        const Location& GetLocation() const noexcept;
+        [[nodiscard]] const Location& GetLocation() const noexcept;
 
-        const std::string& GetSeverity() const noexcept;
+        [[nodiscard]] const std::string& GetSeverity() const noexcept;
 
-        const std::string& GetId() const noexcept;
+        [[nodiscard]] const std::string& GetId() const noexcept;
 
-        const std::string& GetMessage() const noexcept;
+        [[nodiscard]] const std::string& GetMessage() const noexcept;
 
     private:
         Location    m_Location;

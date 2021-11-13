@@ -5,12 +5,12 @@
 #include <sstream>
 
 static constexpr const char* expected_cppcheck_output{
-        R"(MemoryLeaks/MallocLeak.c:6:1 (error): Memory leak: ptr [memleak]
-MemoryLeaks/NewLeak.cpp:6:1 (error): Memory leak: i [memleak]
-OutOfBounds/IndexOutOfBounds.c:7:10 (error): Array 'a[2]' accessed at index 2, which is out of bounds. [arrayIndexOutOfBounds]
-OutOfBounds/strcpy.c:6:12 (error): Buffer is accessed out of bounds: x [bufferAccessOutOfBounds]
-ResourceLeak/FileHandle.c:11:5 (error): Resource leak: handle [resourceLeak]
-SyntaxErrors/MissingClosingBracket.c:2:1 (error): Unmatched '{'. Configuration: ''. [syntaxError]
+        R"(MallocLeak.c:6:1 (error): Memory leak: ptr [memleak]
+NewLeak.cpp:6:1 (error): Memory leak: i [memleak]
+IndexOutOfBounds.c:7:10 (error): Array 'a[2]' accessed at index 2, which is out of bounds. [arrayIndexOutOfBounds]
+strcpy.c:6:12 (error): Buffer is accessed out of bounds: x [bufferAccessOutOfBounds]
+FileHandle.c:11:5 (error): Resource leak: handle [resourceLeak]
+MissingClosingBracket.c:2:1 (error): Unmatched '{'. Configuration: ''. [syntaxError]
 )"};
 
 TEST_CASE("Livetest Cppcheck")
