@@ -75,6 +75,9 @@ jobs:
         run: |
           files=$(find src include tests -iname "*.hpp" -or -iname "*.cpp" -printf "%p ")
 
+          echo "Files:"
+          echo $files
+
           cd build
 
           llvm-profdata-${{ env.LLVM_VERSION }} merge -sparse $(find . -iname "*.profraw" -type f) -o coverage.profdata
