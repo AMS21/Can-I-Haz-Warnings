@@ -67,7 +67,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_VERBOSE_MAKEFILE=ON ..
+          cmake -DCMAKE_VERBOSE_MAKEFILE=ON -DCHW_BUILD_LIVETESTS=OFF ..
 
       - name: Configure Sanitizers
         shell: bash

@@ -39,6 +39,25 @@ jobs:
           echo "CC=clang-${{ env.LLVM_VERSION }}" >> $GITHUB_ENV
           echo "CXX=clang++-${{ env.LLVM_VERSION }}" >> $GITHUB_ENV
 
+      - name: Install cppcheck
+        env:
+          CPPCHECK_VERSION: "2.6"
+        run: |
+          mkdir cppcheck
+          wget --no-check-certificate -O - "https://github.com/danmar/cppcheck/archive/${CPPCHECK_VERSION}.tar.gz" | tar --strip-components=1 -xz -C cppcheck
+
+          # Build CppCheck
+          cd cppcheck
+
+          mkdir build
+          cd build
+
+          cmake .. -DCMAKE_BUILD_TYPE=Release -DUSE_MATCHCOMPILER=ON
+          cmake --build . -j2
+
+          # Install CppCheck
+          sudo make install
+
       - name: Build coverage data
         run: |
           # Create build directory

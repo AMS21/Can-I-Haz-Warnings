@@ -88,6 +88,25 @@ jobs:
           # export compiler
           echo "CXX=${{ matrix.cfg.compiler }}-${{ matrix.cfg.compiler_version }}" >> $GITHUB_ENV
 
+      - name: Install cppcheck
+        env:
+          CPPCHECK_VERSION: "2.6"
+        run: |
+          mkdir cppcheck
+          wget --no-check-certificate -O - "https://github.com/danmar/cppcheck/archive/${CPPCHECK_VERSION}.tar.gz" | tar --strip-components=1 -xz -C cppcheck
+
+          # Build CppCheck
+          cd cppcheck
+
+          mkdir build
+          cd build
+
+          cmake .. -DCMAKE_BUILD_TYPE=Release -DUSE_MATCHCOMPILER=ON
+          cmake --build . -j2
+
+          # Install CppCheck
+          sudo make install
+
       - name: Configure build directory
         run: |
           mkdir build
