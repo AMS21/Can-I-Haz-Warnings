@@ -24,11 +24,20 @@ namespace chw
             // Extract elements
             std::string file_name =
                     std::filesystem::absolute(std::filesystem::path(match[1])).string();
-            int         line_number   = std::stoi(match[2]);
-            int         column_number = std::stoi(match[3]);
-            std::string severity      = match[4];
-            std::string message       = match[5];
-            std::string id            = match[6];
+            int line_number{0};
+            int column_number{0};
+            try
+            {
+                line_number   = std::stoi(match[2]);
+                column_number = std::stoi(match[3]);
+            }
+            catch (std::exception& e)
+            {
+                return false;
+            }
+            std::string severity = match[4];
+            std::string message  = match[5];
+            std::string id       = match[6];
 
             // Construct warning
             Location location = Location(file_name, line_number, column_number);
