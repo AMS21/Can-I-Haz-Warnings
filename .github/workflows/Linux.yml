@@ -88,6 +88,15 @@ jobs:
           # export compiler
           echo "CXX=${{ matrix.cfg.compiler }}-${{ matrix.cfg.compiler_version }}" >> $GITHUB_ENV
 
+      - name: Install clang tidy
+        env:
+          LLVM_VERSION: "13"
+        run: |
+          wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+          sudo add-apt-repository "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-${LLVM_VERSION} main"
+          sudo apt-get update -m
+          sudo apt-get install clang-tidy-${LLVM_VERSION}
+
       - name: Install cppcheck
         env:
           CPPCHECK_VERSION: "2.6"
