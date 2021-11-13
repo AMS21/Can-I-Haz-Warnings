@@ -6,8 +6,3 @@ path_classifiers:
   library:
     - external
     - samples
-
-queries:
-  - include: "*"
-  - exclude: 
-    - "cpp/commented-out-code"
