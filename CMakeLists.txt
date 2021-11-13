@@ -8,6 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Options
 option(CHW_BUILD_LIVETESTS ON)
+option(CHW_BUILD_FUZZER OFF)
 
 # Add external
 add_subdirectory(external)

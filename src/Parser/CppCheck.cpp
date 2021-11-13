@@ -1,6 +1,7 @@
 #include "Parser/CppCheck.hpp"
 
 #include "WarningDatabase.hpp"
+#include <exception>
 #include <filesystem>
 #include <iostream>
 #include <regex>
