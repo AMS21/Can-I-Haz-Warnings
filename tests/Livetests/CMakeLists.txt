@@ -59,6 +59,7 @@ add_executable(${PROJECT_NAME} ${TEST_HEADERS} ${TEST_SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE Can-I-Haz-Warnings-lib Catch2::Catch2WithMain)
 target_compile_definitions(${PROJECT_NAME} PRIVATE "DATA_DIRECTORY=\"${CMAKE_CURRENT_BINARY_DIR}\"")
 
+add_dependencies(${PROJECT_NAME} CppCheckLiveOutput)
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
 add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE:${PROJECT_NAME}>)
