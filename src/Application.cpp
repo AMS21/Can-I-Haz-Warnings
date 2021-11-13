@@ -21,8 +21,13 @@ namespace chw
         {
             std::fseek(file, 0, SEEK_END);
 
-            std::size_t size = std::ftell(file);
-            if (size != -1)
+            long size = std::ftell(file);
+            if (size > std::string().max_size())
+            {
+                return {};
+            }
+
+            if (size != -1L)
             {
                 std::rewind(file);
 
