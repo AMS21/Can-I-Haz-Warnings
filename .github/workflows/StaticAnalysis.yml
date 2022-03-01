@@ -97,7 +97,7 @@ jobs:
         with:
           reviewdog_version: latest
 
-      - uses: actions/setup-python@v2.3.1
+      - uses: actions/setup-python@v3
         with:
           python-version: '3.x'
 
@@ -154,7 +154,7 @@ jobs:
           submodules: recursive
           fetch-depth: 2
 
-      - uses: actions/setup-python@v2.3.1
+      - uses: actions/setup-python@v3
         with:
           python-version: '3.x'
 
@@ -236,7 +236,7 @@ jobs:
         with:
           reviewdog_version: latest
 
-      - uses: actions/setup-python@v2.3.1
+      - uses: actions/setup-python@v3
         with:
           python-version: '3.x'
 
